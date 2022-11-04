@@ -14,9 +14,9 @@ function validatorBlur(event) {
     console.dir(inputEl.dataset.length);
     console.dir(inputEl.value.length);
 
-    const inputValue = inputEl.value.trim();
+    const inputValue = event.currentTarget.value.trim();
     console.log(inputValue);
-    if (Number(inputValue.length) !== Number(inputEl.dataset.length)) {
+    if (Number(inputValue.length) !== Number(event.currentTarget.dataset.length)) {
 console.log(inputValue.length);
         inputEl.classList.remove('valid')
         inputEl.classList.add('invalid')
