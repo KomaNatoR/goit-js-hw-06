@@ -14,15 +14,16 @@ function validatorBlur(event) {
     console.dir(inputEl.dataset.length);
     console.dir(inputEl.value.length);
 
-    if (Number(inputEl.value.length) !== Number(inputEl.dataset.length)) {
+    const inputValue = inputEl.value.trim();
+    console.log(inputValue);
+    if (Number(inputValue.length) !== Number(inputEl.dataset.length)) {
+console.log(inputValue.length);
         inputEl.classList.remove('valid')
         inputEl.classList.add('invalid')
     } else {
+console.log(inputValue.length);
         inputEl.classList.remove('invalid')
         inputEl.classList.add('valid')
     }
 
-    // Number(inputEl.value.length) !== Number(inputEl.dataset.length)
-    //     ? inputEl.classList.toggle('invalid')
-    //     : inputEl.classList.toggle('valid') 
 }

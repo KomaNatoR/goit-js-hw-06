@@ -3,10 +3,11 @@ const refs = {
     spanEl: document.querySelector('#name-output'),
 };
 // console.log(refs.spanEl);
-refs.inputEl.addEventListener('input', event =>
+refs.inputEl.addEventListener('input', event => {
+    const eventValue = event.currentTarget.value;
     event.currentTarget.value === ''
         ? refs.spanEl.textContent = 'Anonymous'
-        : refs.spanEl.textContent = event.currentTarget.value
+        : refs.spanEl.textContent = eventValue.trim()
      
-);
+});
 
