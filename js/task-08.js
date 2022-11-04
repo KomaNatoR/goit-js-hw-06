@@ -8,20 +8,25 @@ const refs = {
 
 refs.form.addEventListener('submit', processingFormData);
 
+
 function processingFormData(event) {
     event.preventDefault();
+    const formElements = event.currentTarget.elements;
 
-    // console.dir(refs.inputMail.value);
-    // console.dir(refs.inputMail.type);
+// console.dir(formElements);
+    if (formElements.email.value.trim().length === 0 || formElements.password.value.trim().length === 0) {
+// console.log(formElements.password.value.trim().length);
+        return alert('Не зліть мене!!!');
+    } else {
+// console.log(formElements.password.value.trim().length);  
+        const formData = new FormData(event.currentTarget);
+        const formDataObject = {};
+        formData.forEach((value, name) => {
 
-    const formData = new FormData(event.currentTarget);
-    const formDataObject = {};
-    formData.forEach((value, name) => {
-        console.log(value);
-        console.log(name);
-        formDataObject[name] = value;
+            formDataObject[name] = value;
+        })
 
-        // return formDataObject;
-    })
-console.log(formDataObject);
+        console.log(formDataObject);
+    }
+    event.currentTarget.reset();
 }
