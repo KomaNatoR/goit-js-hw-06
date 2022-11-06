@@ -17,9 +17,9 @@ function createBoxes(e) {
   const amount = refs.inputEl.value;
   const element = [];
   
-  for (let i = 1; i <= amount; i += 1) {
+  for (let i = 0; i < amount; i += 1) {
 
-    element.push(`<div style="width:30px; height:30px; background:${getRandomHexColor()};"></div>`);
+    element.push(`<div style="width:calc(30px + (10px * ${i})); height:calc(30px + (10px * ${i})); background:${getRandomHexColor()};"></div>`);
     
   }
   // console.log(element.join(''));
