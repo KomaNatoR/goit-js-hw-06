@@ -22,6 +22,7 @@ const arrayOfImages = images.map(image =>
   </li>`  
   )
   .join('');
+console.log(arrayOfImages);
 
 listEl.insertAdjacentHTML("afterbegin", arrayOfImages);
 
