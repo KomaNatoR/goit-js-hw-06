@@ -26,7 +26,7 @@ function processingFormData(event) {
             formDataObject[name] = value;
         })
 
-        console.log(formDataObject);
+        console.dir(formDataObject);
     }
     event.currentTarget.reset();
 }
